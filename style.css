@@ -1,144 +1,214 @@
-body{
+* {
+    box-sizing: border-box;
+}
 
+body {
     font-family: "Montserrat", sans-serif;
     margin: 0;
     background-color: black;
     color: white;
-    /* overflow is used to give a scroll option by doing overflow hidden it will not allow website to scroll */
     overflow: hidden;
-    
 }
 
-.main{
+
+/* ================= MAIN ================= */
+
+.main {
     display: flex;
     height: 100vh;
-    /* giveing full height to main using veiw port height */
     padding: 0.5rem;
-    
 }
-.sidebar{
-    background-color:black;
+
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    background-color: black;
     width: 340px;
     border-radius: 1rem;
     margin-right: 0.5rem;
-}
-.maincontent{
-    background-color:#121212;
-    flex: 1;
-    border-radius: 1rem;
-    overflow: auto;
-    /* flex 1 will give all spacce to the div  */
+    flex-shrink: 0;
 }
 
-.music-player{
-    background-color: black;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 72px;
-}
 
-a{
-    text-decoration: none;
-    color: #fff;
-}
+/* ================= NAVIGATION ================= */
 
-.nav{
+.nav {
     background-color: #121212;
     height: 100px;
     border-radius: 1rem;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     padding: 0.5rem 0.75rem;
 }
 
-.nav-option{
+.nav-option {
     line-height: 2.5rem;
     opacity: 0.7;
     padding: 0.5rem 0.75rem;
 }
 
-.nav-option:hover{
+.nav-option:hover {
     opacity: 1;
-
 }
 
-.nav-option i{
+.nav-option i {
     font-size: 1.25rem;
 }
 
-.nav-option a{
+.nav-option a {
     font-size: 1rem;
     margin-left: 1rem;
 }
 
-.library{
-    background-color: #121212;
-    height: 100px;
-    border-radius: 1rem;
-    padding: 0.5rem 0.75rem;
-    height: 100%;
-    margin-top: 0.5rem;
-
+a {
+    text-decoration: none;
+    color: #fff;
 }
 
-.options{
+
+/* ================= LIBRARY ================= */
+
+.library {
+    background-color: #121212;
+    border-radius: 1rem;
+
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.75rem;
+
+    height: calc(100vh - 108px);
+
+    overflow: auto;
+}
+
+
+/* ================= LIBRARY OPTIONS ================= */
+
+.options {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
-.lib-options img {
+.lib-option {
+    display: flex;
+    align-items: center;
+}
+
+.lib-option img {
     height: 1.25rem;
     width: 1.25rem;
 }
 
-.icons{
-    font-size: 1.25rem;
-    opacity: 0.7;
-    
-    display: flex;
+.lib-option a {
+    font-size: 1rem;
+    margin-left: 1rem;
 }
 
-.icons i{
+
+/* ================= LIBRARY ICONS ================= */
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icons i {
+    font-size: 1.25rem;
     opacity: 0.7;
     margin-right: 1rem;
-
+    cursor: pointer;
 }
 
 .icons i:hover {
     opacity: 1;
-
 }
 
-.box{
 
+/* ================= LIBRARY BOX ================= */
+
+.lib-box {
+    margin-top: 1rem;
+}
+
+.box {
     background-color: #232323;
-    height: 8rem;
+
     border-radius: 0.75rem;
-    margin: 0.75rem 0 1.75rem 0;
-    padding: 0.75rem 1rem;
+
+    margin: 0.75rem 0 1rem 0;
+    padding: 1rem;
+
+    min-height: 8rem;
 }
 
-.box-p1{
+.box-p1 {
     font-size: 1rem;
-    font-weight: 550;
+    font-weight: 700;
+    margin: 0;
 }
-.box-p2{
+
+.box-p2 {
     font-size: 0.85rem;
     opacity: 0.9;
+    margin: 0.75rem 0;
 }
+
+
+/* ================= BUTTON ================= */
 
 .badge {
     background-color: #fff;
+    color: #000;
+
     border: none;
     border-radius: 100px;
-    padding:0.25rem 1rem;
+
+    padding: 0.25rem 1rem;
+
     font-weight: 700;
-    margin-top: 0.5rem;
-    height:2rem;
+
+    height: 2rem;
     width: fit-content;
 
+    cursor: pointer;
+}
+
+.badge:hover {
+    transform: scale(1.03);
+}
+
+
+/* ================= MAIN CONTENT ================= */
+
+.maincontent {
+    background-color: #121212;
+
+    flex: 1;
+
+    border-radius: 1rem;
+
+    overflow: auto;
+
+    padding: 1rem;
+}
+
+
+/* ================= MUSIC PLAYER ================= */
+
+.music-player {
+    background-color: black;
+
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 72px;
+
+    z-index: 10;
 }
